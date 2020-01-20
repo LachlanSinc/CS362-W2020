@@ -19,7 +19,7 @@ nC = -10 + 10 * len(player_names)
 #call MakeBoxes
 box = testUtility.makeBoxes(nV)
 
-
+#set the supply order
 supply_order = testUtility.getSupplyOrder()
 
 #Pick 10 cards from box to be in the supply.
@@ -28,14 +28,12 @@ supply = testUtility.buggedPickTen(box)
 
 #The supply always has these cards
 supply = testUtility.addBaseSupply(supply, nV, nC, player_names)
-#supply = testUtility.addBaseSupply(supply, -1, nC, player_names)
+
 #initialize the trash
 trash = []
 
 #Costruct the Player objects
 players = testUtility.createPlayers(player_names)
-
-
 
 #Play the game
 turn  = 0

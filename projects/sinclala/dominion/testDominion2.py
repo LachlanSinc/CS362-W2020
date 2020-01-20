@@ -10,18 +10,17 @@ import testUtility
 from collections import defaultdict
 
 #Get player names
-player_names = ["Annie","*Ben","*Carla","*Carlac","*Carlad"]
+player_names = ["Annie","*Ben","*Carla","*Lachlan"]
 
 #number of curses and victory cards
 #nV = testUtility.getnV(player_names)
 nV = testUtility.buggedGetnV(player_names)
-
 nC = -10 + 10 * len(player_names)
 
 #call MakeBoxes
 box = testUtility.makeBoxes(nV)
 
-
+#set the supply order
 supply_order = testUtility.getSupplyOrder()
 
 #Pick 10 cards from box to be in the supply.

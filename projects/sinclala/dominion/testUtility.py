@@ -47,7 +47,7 @@ def pickTen(box):
     random10 = boxlist[:10]
     return defaultdict(list, [(k, box[k]) for k in random10])
 
-#added the default cards to the display
+#add the default cards to the display
 def addBaseSupply(supply, nV, nC, player_names):
     supply["Copper"] = [Dominion.Copper()] * (60 - len(player_names) * 7)
     supply["Silver"] = [Dominion.Silver()] * 40
@@ -78,7 +78,7 @@ def getnV(player_names):
         nV = 8
     return nV
 
-#assign cards their value
+#assign cards their value(supply order)
 def getSupplyOrder():
     return {0:['Curse','Copper'],2:['Estate','Cellar','Chapel','Moat'],
                 3:['Silver','Chancellor','Village','Woodcutter','Workshop'],
@@ -86,7 +86,7 @@ def getSupplyOrder():
                 5:['Duchy','Market','Council Room','Festival','Laboratory','Library','Mine','Witch'],
                 6:['Gold','Adventurer'],8:['Province']}
 
-#randomly pick 10 boxes and create dictionary incorrectly
+#randomly pick 10 boxes and create the dictionary incorrectly
 def buggedPickTen(box):
     boxlist = [k for k in box]
     random.shuffle(boxlist)
@@ -95,7 +95,7 @@ def buggedPickTen(box):
 
 #calculate the nV value, return -1 if the number of players is to large
 def buggedGetnV(player_names):
-    if len(player_names) > 4:
+    if len(player_names) >= 4:
         return -1
     elif len(player_names) > 2:
         nV = 12
